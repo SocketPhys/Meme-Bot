@@ -10,7 +10,9 @@ login({email: "titrateacids@gmail.com", password: "Boombox@asd123"}, function ca
 		
        api.listen(function callback(err, message) {
 			var mes = message.body;
-			console.log(mes);
+		if(mes.startsWith('/meme')){
+				  
+			mes = mes.substring(6);
 			mes=mes.match(/\w+|"[^"]+"/g);
 			
 			
@@ -22,6 +24,8 @@ login({email: "titrateacids@gmail.com", password: "Boombox@asd123"}, function ca
 			mes3 = mes[2];
 			
 			try{
+				                           console.log("doner");                                                                                                                                                                                                                                                                                                                                                                                     	                                                                                            
+
 			caption.url(mes1,{
 				caption : mes2,
 				bottomCaption : mes3,
@@ -31,7 +35,7 @@ login({email: "titrateacids@gmail.com", password: "Boombox@asd123"}, function ca
                 	attachment: fs.createReadStream("cat.jpg")
 				}
 				api.sendMessage( msg,message.threadID,function(){
-                                                                                                                                                                                                                                                                                                                                                                                                                      	                                                                                            
+                           console.log("done");                                                                                                                                                                                                                                                                                                                                                                                     	                                                                                            
 				});         
 			})
 			}catch(error){};
@@ -40,7 +44,8 @@ login({email: "titrateacids@gmail.com", password: "Boombox@asd123"}, function ca
 	           
 		
 		   
-			
+		}	
 	});
+	
 });
 
